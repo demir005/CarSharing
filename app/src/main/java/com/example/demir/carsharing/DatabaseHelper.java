@@ -1,6 +1,8 @@
 package com.example.demir.carsharing;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -19,7 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_UNAME="uname";
     private static final String COLUMN_PASS="pass";
     SQLiteDatabase sqLiteDatabase;
-    private static final String TABLE_CREATE = "create table user(id integer primary key not null auto_incremen,"
+    private static final String TABLE_CREATE = "create table user(id integer primary key not null  ,"
             +"name text not null, email text not null, uname text not null, pass text not null)";
 
     public DatabaseHelper(Context context){
@@ -32,6 +34,53 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(TABLE_CREATE);
         this.sqLiteDatabase=sqLiteDatabase;
     }
+
+    public void insertContact(Contact c)
+    {
+        sqLiteDatabase = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        String query = "select * from contacts";
+        Cursor cursor=sqLiteDatabase.rawQuery(query, null);
+        int count = cursor.getCount();
+
+
+
+        values.put(COLUMN_ID,count);
+        values.put(COLUMN_NAME, c.getName());
+        values.put(COLUMN_EMAIL, c.getEmail());
+        values.put(COLUMN_UNAME,c.getUname());
+        values.put(COLUMN_PASS, c.getPass());
+
+        sqLiteDatabase.insert(TABLE_NAME, null, values);
+        sqLiteDatabase.close();
+    }
+
+
+
+    public String searchPass(String uname)
+    {
+        sqLiteDatabase = this.getReadableDatabase();
+        String query = "select uname,pass from"+TABLE_NAME;
+        Cursor cursor =sqLiteDatabase.rawQuery(query, null);
+        String a,b = null; // a->username, b->password
+        if(cursor.moveToFirst())
+        {
+            do{
+                a=cursor.getString(0);
+
+                if(a.equals(uname))
+                {
+                    b=cursor.getString(1);
+                    break;
+                }
+
+            }
+            while(cursor.moveToNext());
+        }
+            return b;
+    }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {

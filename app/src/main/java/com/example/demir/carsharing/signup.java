@@ -2,6 +2,7 @@ package com.example.demir.carsharing;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 public class signup extends Activity {
 
+    DatabaseHelper helper = new DatabaseHelper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +44,17 @@ public class signup extends Activity {
                  // DIsplay popup message
                 Toast pass =Toast.makeText(signup.this, "Password don't match", Toast.LENGTH_SHORT);
                 pass.show();
+            }
+            else {
+
+                //insert the detaild in database
+                Contact c = new Contact();
+                c.setName(namestr);
+                c.setEmail(emailstr);
+                c.setUname(unamestr);
+                c.setPass(passstr1);
+
+                helper.insertContact(c);
             }
 
 
