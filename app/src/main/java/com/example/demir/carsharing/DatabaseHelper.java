@@ -1,5 +1,6 @@
 package com.example.demir.carsharing;
 
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -17,17 +18,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_EMAIL="email";
     private static final String COLUMN_UNAME="uname";
     private static final String COLUMN_PASS="pass";
+    SQLiteDatabase sqLiteDatabase;
+    private static final String TABLE_CREATE = "create table user(id integer primary key not null auto_incremen,"
+            +"name text not null, email text not null, uname text not null, pass text not null)";
 
-    private static final String TABLE_CREATE = "";
+    public DatabaseHelper(Context context){
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-
-
+        sqLiteDatabase.execSQL(TABLE_CREATE);
+        this.sqLiteDatabase=sqLiteDatabase;
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+        String  query  = "DROP TABLE IF EXIST"+ TABLE_NAME;
+        sqLiteDatabase .execSQL(query);
+        this.onCreate(sqLiteDatabase);
     }
 }
