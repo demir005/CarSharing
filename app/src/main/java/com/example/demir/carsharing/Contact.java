@@ -5,18 +5,9 @@ package com.example.demir.carsharing;
  */
 
 public class Contact {
-    // int id;
+
     String name,email,uname,pass;
 
-    /*
-    *public void setId(int Id)
-    {
-        this.id = Id;
-    }
-    public int getId()
-    {
-        return this.id;
-    } */
 
     public void setName(String name)
     {
