@@ -14,7 +14,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME="carsharing.db";
-    private static final String TABLE_NAME="contacts";
+    private static final String TABLE_NAME="user";
     private static final String COLUMN_ID="id";
     private static final String COLUMN_NAME="name";
     private static final String COLUMN_EMAIL="email";
@@ -23,7 +23,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     SQLiteDatabase sqLiteDatabase;
     private static final String TABLE_CREATE = "create table user(id integer primary key not null  ,"
             +"name text not null, email text not null, uname text not null, pass text not null)";
-
     public DatabaseHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -40,7 +39,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        String query = "select * from contacts";
+        String query = "select * from user";
         Cursor cursor=sqLiteDatabase.rawQuery(query, null);
         int count = cursor.getCount();
 
@@ -61,9 +60,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public String searchPass(String uname)
     {
         sqLiteDatabase = this.getReadableDatabase();
-        String query = "select uname,pass from"+TABLE_NAME;
+            String query = "select * from user";
         Cursor cursor =sqLiteDatabase.rawQuery(query, null);
         String a,b = null; // a->username, b->password
+        b="not found";
         if(cursor.moveToFirst())
         {
             do{
