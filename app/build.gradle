@@ -1,12 +1,22 @@
 apply plugin: 'com.android.application'
 
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.google.android.gms:play-services:7.5.0'
+    androidTestCompile 'com.android.support.test:runner:0.3'
+    androidTestCompile 'com.android.support.test:rules:0.3'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2'
+}
+
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
     defaultConfig {
-        applicationId "com.example.demir.carsharing"
-        minSdkVersion 15
-        targetSdkVersion 25
+        applicationId "com.azra.putujmozajedno"
+        minSdkVersion 16
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -17,13 +27,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
 }
 
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    testCompile 'junit:junit:4.12'
+repositories {
+    mavenCentral()
 }
+
+
