@@ -29,7 +29,7 @@ public class NoviKorisnikActivity extends ActionBarActivity {
     EditText fb;
 
 
-    private static String url_kreiraj_korisnika = "http://10.0.2.2/putujmo_zajedno/kreiraj_korisnika.php";
+    private static String url_kreiraj_korisnika = "http://demirmahmutovic.000webhostapp.com/putujmo_zajedno/kreiraj_korisnika.php";
 
     // JSON
     private static final String TAG_USPJEH = "uspjeh";

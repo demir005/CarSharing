@@ -4,9 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-/**
- * Created by Azra on 26.08.2015..
- */
+
 public class KorisnikInfoActivity extends Activity {
 
     Korisnik korisnik;

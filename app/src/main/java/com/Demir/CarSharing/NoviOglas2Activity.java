@@ -13,9 +13,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by Azra on 20.08.2015..
- */
 public class NoviOglas2Activity extends ActionBarActivity {
 
     EditText datumTxt;

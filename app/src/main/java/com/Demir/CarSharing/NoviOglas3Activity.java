@@ -19,9 +19,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Azra on 20.08.2015..
- */
+
 public class NoviOglas3Activity extends ActionBarActivity {
 
     Button postaviBtn;
@@ -35,7 +33,7 @@ public class NoviOglas3Activity extends ActionBarActivity {
 
     JSONParser jsonParser = new JSONParser();
 
-    private static String url_dodaj_oglas = "http://10.0.2.2/putujmo_zajedno/dodaj_oglas.php";
+    private static String url_dodaj_oglas = "http://demirmahmutovic.000webhostapp.com/putujmo_zajedno/dodaj_oglas.php";
 
     // JSON
     private static final String TAG_USPJEH = "uspjeh";

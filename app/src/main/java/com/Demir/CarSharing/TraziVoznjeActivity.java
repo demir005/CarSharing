@@ -7,9 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-/**
- * Created by Azra on 23.08.2015..
- */
+
 public class TraziVoznjeActivity extends Activity {
 
     EditText traziMjestoTxt;

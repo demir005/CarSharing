@@ -4,9 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-/**
- * Created by Azra on 24.08.2015..
- */
+
 public class Sesija {
 
     SharedPreferences sp;

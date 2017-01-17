@@ -5,9 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * Created by Azra on 26.08.2015..
- */
+
 public class Oglas {
 
     private int id;

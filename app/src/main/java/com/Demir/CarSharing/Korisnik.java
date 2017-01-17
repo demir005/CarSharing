@@ -2,9 +2,7 @@ package com.Demir.CarSharing;
 
 import java.io.Serializable;
 
-/**
- * Created by Azra on 26.08.2015..
- */
+
 public class Korisnik implements Serializable{
 
     private String id;

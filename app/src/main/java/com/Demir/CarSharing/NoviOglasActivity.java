@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-/**
- * Created by Azra on 20.08.2015..
- */
+
 public class NoviOglasActivity extends Activity {
 
     Button ponudaBtn;

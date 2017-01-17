@@ -26,8 +26,8 @@ public class VoznjaInfoActivity extends Activity {
 
     JSONParser jParser = new JSONParser();
 
-    private static String url_voznja_id = "http://10.0.2.2/putujmo_zajedno/daj_voznju_id.php";
-    private static String url_korisnik_id = "http://10.0.2.2/putujmo_zajedno/daj_korisnika_id.php";
+    private static String url_voznja_id = "http://demirmahmutovic.000webhostapp.com/putujmo_zajedno/daj_voznju_id.php";
+    private static String url_korisnik_id = "http://demirmahmutovic.000webhostapp.com/putujmo_zajedno/daj_korisnika_id.php";
 
     // JSON Node names
     private static final String TAG_USPJEH = "uspjeh";

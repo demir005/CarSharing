@@ -39,10 +39,10 @@ public class SveVoznjeActivity extends ListActivity {
     ArrayList<HashMap<String, String>> oglasiLista;
 
     // url za sve voznje
-    private static String url_sve_voznje = "http://10.0.2.2/putujmo_zajedno/daj_voznje.php";
+    private static String url_sve_voznje = "http://demirmahmutovic.000webhostapp.com/putujmo_zajedno/daj_voznje.php";
 
     //url za voznje po pretrazi
-    private static String url_trazi_voznje = "http://10.0.2.2/putujmo_zajedno/trazi_voznje.php";
+    private static String url_trazi_voznje = "http://demirmahmutovic.000webhostapp.com/putujmo_zajedno/trazi_voznje.php";
 
     // JSON Node names
     private static final String TAG_USPJEH = "uspjeh";

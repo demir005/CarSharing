@@ -24,7 +24,7 @@ import java.util.List;
 public class Login extends Activity {
 
     JSONParser jsonParser = new JSONParser();
-    private static String url_login_provjera = "http://10.0.2.2/putujmo_zajedno/login_provjera.php";
+    private static String url_login_provjera = "http://demirmahmutovic.000webhostapp.com/putujmo_zajedno/login_provjera.php";
     private static  String TAG_USPJEH = "uspjeh";
     private static String TAG_PORUKA = "tekst";
 
