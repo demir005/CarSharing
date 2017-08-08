@@ -155,7 +155,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="Neko Treci"
+                            android:text="Azra Mahmutović"
                             android:id="@+id/korisnikIme"
                             android:textSize="16sp"
                             android:textColor="@color/link_text_material_light" />

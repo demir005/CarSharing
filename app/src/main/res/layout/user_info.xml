@@ -34,7 +34,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Demir Mahmutović"
+                    android:text="Azra Mahmutović"
                     android:id="@+id/imePrezime"
                     android:textSize="34sp"
                     android:textColor="@color/bright_foreground_inverse_material_light"
@@ -74,7 +74,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="062 123 456"
+                    android:text="062 445 339"
                     android:id="@+id/userTelefon"
                     android:layout_gravity="center"
                     android:textSize="16sp"
@@ -97,7 +97,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="demirmah93@gmail.com"
+                    android:text="azramah6@gmail.com"
                     android:id="@+id/userMail"
                     android:textSize="16sp"
                     android:layout_gravity="center"
@@ -124,7 +124,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Demir Mahmutovic"
+                    android:text="mahmutovic.azra"
                     android:id="@+id/userFb"
                     android:textSize="16sp"
                     android:layout_gravity="center"

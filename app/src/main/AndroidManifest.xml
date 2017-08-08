@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.Demir.CarSharing" >
+    package="com.azra.putujmozajedno" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="25"/>
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+
+
+
+
+
+
 
     <application
         android:allowBackup="true"
@@ -13,7 +27,7 @@
         android:theme="@style/Theme.AppCompat.Light">
 
         <activity
-            android:name="com.Demir.CarSharing.Login"
+            android:name=".Login"
             android:label="@string/app_name"
             android:noHistory="true" >
 
@@ -26,50 +40,50 @@
 
         <!-- Main Screen Activity -->
         <activity
-            android:name="com.Demir.CarSharing.MainScreenActivity"
+            android:name=".MainScreenActivity"
             android:label="Putujmo zajedno" >
         </activity>
 
         <!-- All Product Activity -->
         <activity
-            android:name="com.Demir.CarSharing.SveVoznjeActivity"
+            android:name=".SveVoznjeActivity"
             android:label="Sve vožnje" >
         </activity>
 
         <!-- Add Product Activity -->
 
         <activity
-            android:name="com.Demir.CarSharing.NoviKorisnikActivity"
+            android:name=".NoviKorisnikActivity"
             android:label="Registracija" >
         </activity>
 
         <activity
-            android:name="com.Demir.CarSharing.NoviOglasActivity"
+            android:name=".NoviOglasActivity"
             android:label="Novi oglas" >
         </activity>
 
         <activity
-            android:name="com.Demir.CarSharing.NoviOglas2Activity"
+            android:name=".NoviOglas2Activity"
             android:label="Novi oglas" >
         </activity>
 
         <activity
-            android:name="com.Demir.CarSharing.NoviOglas3Activity"
+            android:name=".NoviOglas3Activity"
             android:label="Novi oglas" >
         </activity>
 
         <activity
-            android:name="com.Demir.CarSharing.TraziVoznjeActivity"
+            android:name=".TraziVoznjeActivity"
             android:label="Pretraga vožnji" >
         </activity>
 
         <activity
-            android:name="com.Demir.CarSharing.VoznjaInfoActivity"
+            android:name=".VoznjaInfoActivity"
             android:label="Detalji vožnje">
         </activity>
 
         <activity
-            android:name="com.Demir.CarSharing.KorisnikInfoActivity"
+            android:name=".KorisnikInfoActivity"
             android:label="Podaci o korisniku">
         </activity>
 
