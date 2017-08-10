@@ -5,11 +5,17 @@ $odgovor = array();
 
 if(isset($_POST['id'])){
 
+
     $id = $_POST['id'];
+    // $id = 14;
    
-    $dsn = 'mysql:dbname=pz;host=127.0.0.1';
+    // $dsn = 'mysql:dbname=pz;host=127.0.0.1';
+    // $user = 'root';
+    // $password = 'admin';
+    
+    $dsn = 'mysql:dbname=pz;host=localhost';
     $user = 'root';
-    $password = 'admin';
+    $password = '';
 
     try{
         $con = new PDO($dsn, $user, $password);
@@ -20,33 +26,26 @@ if(isset($_POST['id'])){
 
     // get all products from products table
     //$result = mysql_query("SELECT *FROM products") or die(mysql_error());
-    $result = $con->prepare('SELECT * FROM oglasi WHERE id = ?');
+    $result = $con->prepare('SELECT * FROM korisnici WHERE id = ?');
             $result->bindValue(1, $id, PDO::PARAM_INT);
             $result->execute();
     // check for empty result
     if ($result->rowCount() > 0) {
         // looping through all results
         // products node
-        $odgovor["oglasi"] = array();
+        $odgovor["korisnici"] = array();
      
         foreach($result as $row) {
             // temp user array
-            $oglas = array();
-            $oglas["id"] = $row["id"];
-            $oglas["tip_oglasa"] = $row["tip_oglasa"];
-            $oglas["polazak"] = $row["polazak"];
-            $oglas["odrediste"] = $row["odrediste"];
-            $oglas["datum"] = $row["datum"];
-            $oglas["vrijeme"] = $row["vrijeme"];
-            $oglas["br_mjesta"] = $row["br_mjesta"];
-            $oglas["flex_dana"] = $row["flex_dana"];
-            $oglas["info"] = $row["info"];
-            $oglas["trosak"] = $row["trosak"];
-            $oglas["cijena"] = $row["cijena"];
-            $oglas["korisnik_id"] = $row["korisnik_id"];
-
+            $korisnik = array();
+            $korisnik["id"] = $row["id"];
+            $korisnik["ime"] = $row["ime"];
+            $korisnik["prezime"] = $row["prezime"];
+            $korisnik["email"] = $row["email"];
+            $korisnik["telefon"] = $row["telefon"];
+            $korisnik["fb"] = $row["fb"];
             // push single product into final response array
-            array_push($odgovor["oglasi"], $oglas);
+            array_push($odgovor["korisnici"], $korisnik);
         }
         // success
         $odgovor["uspjeh"] = 1;
@@ -56,7 +55,7 @@ if(isset($_POST['id'])){
     } else {
         // no products found
         $odgovor["uspjeh"] = 0;
-        $odgovor["poruka"] = "Nema oglasa sa tim ID-em";
+        $odgovor["poruka"] = "Nema korisnika sa tim ID-em";
      
         // echo no users JSON
         echo json_encode($odgovor);

@@ -14,7 +14,7 @@ if(isset($_GET['polazak']) || isset($_GET['odrediste'])){
 
     $dsn = 'mysql:dbname=pz;host=127.0.0.1';
     $user = 'root';
-    $password = 'admin';
+    $password = '';
 
     try{
         $con = new PDO($dsn, $user, $password);

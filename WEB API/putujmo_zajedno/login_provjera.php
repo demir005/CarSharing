@@ -9,7 +9,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 
 	$dns = 'mysql:dbname=pz;host=127.0.0.1';
 	$user = 'root';
-    $password = 'admin';
+    $password = '';
 
     try{
     	$con = new PDO($dns, $user, $password);

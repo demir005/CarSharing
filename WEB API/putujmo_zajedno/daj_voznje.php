@@ -4,9 +4,13 @@
 $odgovor = array();
 
 
-$dsn = 'mysql:dbname=pz;host=127.0.0.1';
-$user = 'root';
-$password = 'admin';
+// $dsn = 'mysql:dbname=pz;host=127.0.0.1';
+// $user = 'root';
+// $password = 'admin';
+
+    $dsn = 'mysql:dbname=pz;host=localhost';
+    $user = 'root';
+    $password = '';
 
 try{
     $con = new PDO($dsn, $user, $password);

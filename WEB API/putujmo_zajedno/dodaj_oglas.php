@@ -36,7 +36,7 @@ if(isset($_POST['tip_oglasa']) && isset($_POST['polazak'])
     //parametri za konekciju
 	$dns = 'mysql:dbname=pz;host=127.0.0.1';
 	$user = 'root';
-    $password = 'admin';
+     $password = '';
 
     try{
     	$con = new PDO($dns, $user, $password);
@@ -65,14 +65,14 @@ if(isset($_POST['tip_oglasa']) && isset($_POST['polazak'])
 
 	if ($result) {
       	$poruka["uspjeh"] = 1;
-        $poruka["tekst"] = "Oglas uspje≈°no dodan";
+        $poruka["tekst"] = "Oglas uspjeöno dodan";
  
         echo json_encode($poruka);
     }
 
     else{
     	$poruka["uspjeh"] = 0;
-        $poruka["tekst"] = "Gre≈°ka kod dodavanja oglasa";
+        $poruka["tekst"] = "Greöka kod dodavanja oglasa";
  
         echo json_encode($poruka);
     }
